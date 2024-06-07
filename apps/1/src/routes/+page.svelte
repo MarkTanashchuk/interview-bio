@@ -11,11 +11,18 @@
 
 		return {
 			update: (indexNew) => {
+				if (animationCurrent.isActive()) {
+					animationCurrent.timeScale(4);
+				}
+
 				if (indexCurrent !== indexNew) {
 					indexCurrent = indexNew;
 
 					animationCurrent.to('#border', {
-						xPercent: indexCurrent * 300
+						xPercent: indexCurrent * 300,
+						onStart: () => {
+							animationCurrent.timeScale(1);
+						}
 					});
 				}
 			},
@@ -32,7 +39,7 @@
 			<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<li
-				class="m-0 p-2 z-10 text-white font-bold text-xl text-center cursor-pointer list-none transition-opacity"
+				class="m-0 p-2 z-10 flex-auto text-white font-bold text-xl text-center cursor-pointer list-none transition-opacity"
 				style:opacity={tabIdxActive === i ? 1 : 0.5}
 				bind:this={tabNodes[i]}
 				on:click={() => (tabIdxActive = i)}
