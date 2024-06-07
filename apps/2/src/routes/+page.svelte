@@ -1,5 +1,5 @@
 <div class="flex flex-col w-full h-full items-center justify-center">
-	<h1 class="w-fit text-[#515151] font-bold text-3xl">2</h1>
+	<h1 class="w-fit text-[#515151] font-bold text-3xl pb-8">2</h1>
 
 	<div
 		class="flex flex-col justify-center items-center w-64 h-64 p-12 gap-4 rounded-[5rem] bg-white"
