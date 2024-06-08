@@ -42,12 +42,12 @@
 
 		timeline
 			.from(q('#hero-image'), {
-				opacity: 0
+				autoAlpha: 0
 			})
 			.from(
 				[q('#menu'), q('#primary-title'), q('#secondary-title'), q('#navigation'), q('#socials')],
 				{
-					opacity: 0,
+					autoAlpha: 0,
 					x: -20,
 					stagger: 0.2
 				}
@@ -55,7 +55,7 @@
 			.from(
 				[q('#languages'), q('#info'), q('#secondary-image'), q('#tertiary-image'), q('#button')],
 				{
-					opacity: 0,
+					autoAlpha: 0,
 					x: 20,
 					stagger: 0.2
 				}
