@@ -7,7 +7,11 @@
 
 	type Lang = (typeof languages)[number];
 	const languages = ['ENG', 'FR'] as const;
-	const socials = ['FB', 'PIN', 'IG'] as const;
+	const socials = [
+		{ name: 'FB', href: 'https://google.com' },
+		{ name: 'PIN', href: 'https://google.com' },
+		{ name: 'IG', href: 'https://google.com' }
+	] as const;
 
 	let slideIdx: SlideIdx = 1;
 	let languageActive: Lang = 'ENG';
@@ -57,13 +61,21 @@
 				}
 			);
 	};
+
+	const logSlideChange = (...args: any[]) => {
+		console.info(slideIdx);
+	};
+
+	$: logSlideChange(slideIdx);
 </script>
 
 <div
 	class="relative min-h-96 flex w-fit h-fit max-h-screen max-w-[100vw] aspect-[16/10] mx-auto"
 	use:animate
 >
-	<div class="relative flex flex-col justify-end w-3/5 h-full p-12 gap-12 text-white">
+	<div
+		class="relative flex flex-col justify-end w-3/5 h-full p-12 py-24 gap-12 lg:gap-16 xl:gap-24 text-white"
+	>
 		<div
 			id="menu"
 			class="flex absolute items-center left-12 top-12 gap-4 z-50 text-white cursor-pointer"
@@ -77,11 +89,11 @@
 				</g>
 			</svg>
 
-			<div class="text-xs">Menu</div>
+			<div class="text-xs font-bold">Menu</div>
 		</div>
 		<div id="socials" class="flex absolute gap-8 left-12 bottom-12 z-50 text-white text-xs">
-			{#each socials as social}
-				<button>{social}</button>
+			{#each socials as { name, href }}
+				<a class="font-bold" {href}>{name}</a>
 			{/each}
 		</div>
 		<img
@@ -112,7 +124,7 @@
 	</div>
 
 	<div
-		class="relative flex flex-col gap-4 justify-end items-end w-2/5 min-h-full h-full p-12 pr-24 bg-[#f8eee4]"
+		class="relative flex flex-col gap-4 justify-end items-end w-2/5 min-h-full h-full p-12 bg-[#f8eee4]"
 	>
 		<div id="languages" class="flex absolute gap-8 right-12 top-12 z-50 text-black text-sm">
 			{#each languages as language}
@@ -128,19 +140,19 @@
 
 		<div
 			id="info"
-			class="flex items-center absolute -right-12 top-1/2 -translate-y-1/2 rotate-90 z-50 text-bold text-xs gap-4"
+			class="flex items-center absolute -right-20 top-1/2 -translate-y-1/2 rotate-90 z-50 text-bold text-xs gap-4"
 		>
 			<div>REF: 6687/767</div>
 			<div class="h-[1px] w-16 bg-black" />
-			<div>FR</div>
+			<div>White loose dress</div>
 		</div>
 
-		<img id="secondary-image" class="w-2/3" src="1.jpg" alt="a white cat" />
-		<div class="flex w-full gap-8 items-end">
+		<img id="secondary-image" class="w-2/3 mr-12" src="1.jpg" alt="a white cat" />
+		<div class="flex justify-between w-full gap-8 items-end">
 			<img id="tertiary-image" class="w-1/2" src="2.jpg" alt="a white cat" />
 			<div
 				id="button"
-				class="flex justify-center items-center whitespace-nowrap py-2 px-12 text-sm bold h-fit w-1/2 border-black border-solid border-2"
+				class="flex justify-center items-center whitespace-nowrap py-3 px-12 text-sm bold h-fit w-1/2 border-black border-solid border-2"
 			>
 				Shop now
 			</div>
