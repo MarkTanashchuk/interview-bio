@@ -15,7 +15,6 @@
 		"test:unit": "vitest"
 	},
 	"dependencies": {
-		"@repo/ui": "workspace:*",
 		"gsap": "^3.12.5"
 	},
 	"devDependencies": {
