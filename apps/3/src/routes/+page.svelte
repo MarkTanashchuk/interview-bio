@@ -78,7 +78,7 @@
 	>
 		<div
 			id="menu"
-			class="flex absolute items-center left-12 top-12 gap-4 z-50 text-white cursor-pointer"
+			class="flex absolute invisible items-center left-12 top-12 gap-4 z-50 text-white cursor-pointer"
 		>
 			<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 				<path d="m0 0h24v24h-24z" fill="#fff" opacity="0" transform="matrix(-1 0 0 -1 24 24)" />
@@ -91,24 +91,27 @@
 
 			<div class="text-xs font-bold">Menu</div>
 		</div>
-		<div id="socials" class="flex absolute gap-8 left-12 bottom-12 z-50 text-white text-xs">
+		<div
+			id="socials"
+			class="flex invisible absolute gap-8 left-12 bottom-12 z-50 text-white text-xs"
+		>
 			{#each socials as { name, href }}
 				<a class="font-bold" {href}>{name}</a>
 			{/each}
 		</div>
 		<img
 			id="hero-image"
-			class="w-full h-full object-cover absolute left-0 top-0 z-10 select-none"
+			class="w-full h-full invisible object-cover absolute left-0 top-0 z-10 select-none"
 			src="3.jpg"
 			alt="a white cat"
 		/>
 		<div class="relative flex justify-between w-full z-30">
-			<div id="secondary-title" class="flex flex-col text-white text-xs italic">
+			<div id="secondary-title" class="flex flex-col invisible text-white text-xs italic">
 				<span>Summurr</span>
 				<span>Collection</span>
 				<span>2022</span>
 			</div>
-			<div id="navigation" class="flex items-center gap-4 text-xs">
+			<div id="navigation" class="flex invisible items-center gap-4 text-xs">
 				<button class="text-white" on:click={handleSelectNextSlide}>Next</button>
 				<div class="h-[1px] w-16 bg-white" />
 				<button class="text-white" on:click={handleSelectPrevSlide}>Previous</button>
@@ -116,7 +119,7 @@
 		</div>
 		<div
 			id="primary-title"
-			class="relative flex flex-col text-4xl md:text-6xl lg:text-8xl z-30 mb-12 italic"
+			class="relative invisible flex flex-col text-4xl md:text-6xl lg:text-8xl z-30 mb-12 italic"
 		>
 			<span>Summurr</span>
 			<span>2020</span>
@@ -126,7 +129,10 @@
 	<div
 		class="relative flex flex-col gap-4 justify-end items-end w-2/5 min-h-full h-full p-12 bg-[#f8eee4]"
 	>
-		<div id="languages" class="flex absolute gap-8 right-12 top-12 z-50 text-black text-sm">
+		<div
+			id="languages"
+			class="flex invisible absolute gap-8 right-12 top-12 z-50 text-black text-sm"
+		>
 			{#each languages as language}
 				<button
 					class="text-xs"
@@ -140,19 +146,19 @@
 
 		<div
 			id="info"
-			class="flex items-center absolute -right-20 top-1/2 -translate-y-1/2 rotate-90 z-50 text-bold text-xs gap-4"
+			class="flex invisible items-center absolute -right-20 top-1/2 -translate-y-1/2 rotate-90 z-50 text-bold text-xs gap-4"
 		>
 			<div>REF: 6687/767</div>
 			<div class="h-[1px] w-16 bg-black" />
 			<div>White loose dress</div>
 		</div>
 
-		<img id="secondary-image" class="w-2/3 mr-12" src="1.jpg" alt="a white cat" />
+		<img id="secondary-image" class="invisible w-2/3 mr-12" src="1.jpg" alt="a white cat" />
 		<div class="flex justify-between w-full gap-8 items-end">
-			<img id="tertiary-image" class="w-1/2" src="2.jpg" alt="a white cat" />
+			<img id="tertiary-image" class="invisible w-1/2" src="2.jpg" alt="a white cat" />
 			<div
 				id="button"
-				class="flex justify-center items-center whitespace-nowrap py-3 px-12 text-sm bold h-fit w-1/2 border-black border-solid border-2"
+				class="flex invisible justify-center items-center whitespace-nowrap py-3 px-12 text-sm bold h-fit w-1/2 border-black border-solid border-2"
 			>
 				Shop now
 			</div>
